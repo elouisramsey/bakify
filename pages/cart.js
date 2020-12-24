@@ -6,14 +6,9 @@ import Link from 'next/link'
 import Footer from '../components/Footer'
 
 const Cart = () => {
-  const {
-    addToCart,
-    carttotal,
-    cart,
-    increase,
-    reduction,
-    removeProduct
-  } = useContext(CartContext)
+  const { carttotal, cart, increase, reduction, removeProduct } = useContext(
+    CartContext
+  )
   return (
     <>
       <Navigation />
