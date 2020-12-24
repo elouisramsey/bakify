@@ -1,0 +1,23 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+    background-color: #F2F2F2;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.hero {
+    /* background-image: url('/images/hero background.svg'); */
+    background-color: rgb(219, 218, 218);
+    background-blend-mode: multiply;
+}
+
+.img-holder {
+    height: 230px;
+}
+
+.cart-holder {
+    height: 110px;
+}
