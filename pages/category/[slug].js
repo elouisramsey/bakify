@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { IoIosArrowForward } from 'react-icons/io'
 import { IoCart } from 'react-icons/io5'
 import Navigation from '../../components/Navigation'
-import CartContext from '../../components/context'
+import CartContext from '../../components/context/context'
 import Footer from '../../components/Footer'
 
 const client = require('contentful').createClient({
@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default function Category({ pastry, params }) {
+export default function Category({ pastry }) {
   const { addToCart } = useContext(CartContext)
   return (
     <>
@@ -50,13 +50,11 @@ export default function Category({ pastry, params }) {
         <IoIosArrowForward className='text-white text-sm ml-1' />
         <IoIosArrowForward className='text-white text-sm' />
         <Link href='/'>
-          <a className='text-white text-sm capitalize ml-1'>{params}</a>
+          <a className='text-white text-sm capitalize ml-1'></a>
         </Link>
       </div>
       <div className='mb-4 text-center'>
-        <h1 className='text-base w-full text-center text-cate capitalize mb-4 font-medium'>
-          {params}
-        </h1>
+        <h1 className='text-base w-full text-center text-cate capitalize mb-4 font-medium'></h1>
         <p className='text-sm text-search text-center'>
           Showing results of 3 - 100
         </p>
@@ -94,7 +92,8 @@ export default function Category({ pastry, params }) {
                         paste.fields.slug,
                         paste.fields.name,
                         paste.fields.price,
-                        paste.fields.images.fields.file.url
+                        paste.fields.images.fields.file.url,
+                        paste.fields.count
                       )
                     }}
                   >

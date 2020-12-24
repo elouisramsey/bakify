@@ -3,7 +3,7 @@ import Navigation from '../../components/Navigation'
 import Link from 'next/link'
 import { IoIosArrowForward, IoIosAdd, IoIosRemove } from 'react-icons/io'
 import { IoCart } from 'react-icons/io5'
-import CartContext from '../../components/context'
+import CartContext from '../../components/context/context'
 import Footer from '../../components/Footer'
 
 const client = require('contentful').createClient({

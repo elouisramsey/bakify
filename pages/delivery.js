@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { PaystackButton } from 'react-paystack'
-import CartContext from '../components/context'
+import CartContext from '../components/context/context'
 import Footer from '../components/Footer'
 import Navigation from '../components/Navigation'
 

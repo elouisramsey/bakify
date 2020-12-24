@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { useContext } from 'react'
 import { IoCart } from 'react-icons/io5'
-import CartContext from './context'
+import CartContext from './context/context'
 
 const Bestsellers = ({ bestseller }) => {
   const { addToCart } = useContext(CartContext)

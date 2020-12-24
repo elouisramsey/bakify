@@ -10,7 +10,7 @@ import {
   FaDoorOpen
 } from 'react-icons/fa'
 import { GiDonut, GiPieSlice } from 'react-icons/gi'
-import CartContext from './context'
+import CartContext from './context/context'
 
 const Navigation = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
