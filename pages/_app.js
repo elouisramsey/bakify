@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import '../styles/tailwind.css'
-import cartcontext from './context'
+import cartcontext from '../components/context'
 
 function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState([])

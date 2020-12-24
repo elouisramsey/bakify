@@ -3,7 +3,7 @@ import Navigation from '../../components/Navigation'
 import Link from 'next/link'
 import { IoIosArrowForward, IoIosAdd, IoIosRemove } from 'react-icons/io'
 import { IoCart } from 'react-icons/io5'
-import CartContext from '../context'
+import CartContext from '../../components/context'
 import Footer from '../../components/Footer'
 
 const client = require('contentful').createClient({
@@ -30,6 +30,7 @@ export async function getStaticProps({ params }) {
     order: 'sys.createdAt',
     'fields.slug': params.slug
   })
+
   return {
     props: {
       pastry: data.items[0]

@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { PaystackButton } from 'react-paystack'
+import CartContext from '../components/context'
 import Footer from '../components/Footer'
 import Navigation from '../components/Navigation'
-import CartContext from './context'
 
 const Delivery = () => {
   const { carttotal, cart } = useContext(CartContext)

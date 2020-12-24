@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import Navigation from '../components/Navigation'
-import CartContext from './context'
 import { IoIosArrowBack, IoIosAdd, IoIosRemove } from 'react-icons/io'
 import Link from 'next/link'
 import Footer from '../components/Footer'
+import CartContext from '../components/context'
 
 const Cart = () => {
   const { carttotal, cart, increase, reduction, removeProduct } = useContext(

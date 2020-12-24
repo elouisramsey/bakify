@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Bestsellers from '../components/Bestsellers'
 import Category from '../components/Category'
 import Hero from '../components/Hero'
@@ -15,6 +14,7 @@ export async function getStaticProps() {
     content_type: 'bakify',
     order: 'sys.createdAt'
   })
+
   return {
     props: {
       pastries: data.items

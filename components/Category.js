@@ -9,7 +9,10 @@ const Category = ({ categories }) => {
       </h1>
       <div className='text-center md:grid grid-cols-3 gap-4'>
         {categories.map((category) => (
-          <Link key={category.fields.slug} href={'/' + category.fields.type}>
+          <Link
+            key={category.fields.slug}
+            href={'/category/' + category.fields.type}
+          >
             <a>
               <div className='img-holder'>
                 <img

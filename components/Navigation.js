@@ -10,7 +10,7 @@ import {
   FaDoorOpen
 } from 'react-icons/fa'
 import { GiDonut, GiPieSlice } from 'react-icons/gi'
-import CartContext from '../pages/context'
+import CartContext from './context'
 
 const Navigation = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -162,7 +162,7 @@ const Navigation = () => {
                   </Link>
                 </li>
                 <li className='mb-3'>
-                  <Link href='/'>
+                  <Link href='/pie'>
                     <a className='text-navigation text-xl font-sansreg flex items-center'>
                       <GiPieSlice className='mr-2 text-xl' /> Pie
                     </a>
