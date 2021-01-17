@@ -49,13 +49,15 @@ export default function Category({ pastry }) {
         </Link>
         <IoIosArrowForward className='text-white text-sm ml-1' />
         <IoIosArrowForward className='text-white text-sm' />
-        <p className='text-white text-sm capitalize'>{pastry[0].fields.type}</p>
+        <p className='text-white text-sm capitalize'>
+          {pastry ? pastry[0].fields.type : ''}
+        </p>
       </div>
       <div className='mb-4 text-center'>
         <h1 className='text-base w-full text-center text-cate capitalize mb-4 font-medium'></h1>
         <p className='text-sm text-search text-center '>
-          We currently have {pastry.length} types of {pastry[0].fields.type}(s)
-          available
+          We currently have {pastry.length} types of{' '}
+          {pastry ? pastry[0].fields.type : ''}(s) available
         </p>
       </div>
       <div className='py-4 px-2  mb-4'>
