@@ -13,7 +13,14 @@ const Bestsellers = ({ bestseller }) => {
       <div className='md:grid grid-cols-3 gap-4'>
         {bestseller.map((bestseller) => (
           <div className='mb-4' key={bestseller.fields.slug}>
-            <Link href={'/pastry/' + bestseller.fields.slug}>
+            <Link
+              href={
+                '/category/' +
+                bestseller.fields.type +
+                '/' +
+                bestseller.fields.slug
+              }
+            >
               <a>
                 <div className='img-holder'>
                   <img

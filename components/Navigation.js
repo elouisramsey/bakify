@@ -7,9 +7,9 @@ import {
   FaHamburger,
   FaCookieBite,
   FaPhoneAlt,
-  FaDoorOpen
+  FaTimes
 } from 'react-icons/fa'
-import { GiDonut, GiPieSlice } from 'react-icons/gi'
+import { GiDonut, GiPieSlice, GiHamburgerMenu } from 'react-icons/gi'
 import CartContext from './context/context'
 
 const Navigation = () => {
@@ -91,13 +91,10 @@ const Navigation = () => {
                 type='button'
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
-                <svg
-                  className='h-full w-full'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
-                </svg>
+                <FaTimes className={navbarOpen ? 'block text-xl' : 'hidden'} />
+                <GiHamburgerMenu
+                  className={navbarOpen ? 'hidden' : 'block text-xl'}
+                />
               </button>
             </div>
           </div>
@@ -115,7 +112,7 @@ const Navigation = () => {
                     Login
                   </a>
                 </Link>
-                <Link href='/login'>
+                <Link href='/signup'>
                   <a className='inline-flex justify-center py-2 px-4 border border-login text-sm text-loginText bg-link hover:bg-about focus:outline-none w-1/2'>
                     Create an Account
                   </a>
@@ -127,43 +124,61 @@ const Navigation = () => {
               </h1>
               <ul className='flex flex-col md:flex-row md:items-center md:mx-0 md:mt-0 md:pt-0 md:mr-4 md:ml-auto lg:mr-8 justify-between lg:w-2/4 md:w-3/4 w-full h-1/3 md:h-full  ml-2'>
                 <li className='mt-4 md:mt-0 mb-3'>
-                  <Link href='/'>
-                    <a className='text-navigation text-xl font-sansreg flex items-center'>
+                  <Link href={'/category' + '/cake'}>
+                    <a
+                      className='text-navigation text-xl font-sansreg flex items-center'
+                      onClick={() => setNavbarOpen(!navbarOpen)}
+                    >
                       <FaBirthdayCake className='mr-2 text-xl' /> Cake
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
-                  <Link href='/donuts'>
-                    <a className='text-navigation text-xl font-sansreg flex items-center'>
+                  <Link href={'/category' + '/donut'}>
+                    <a
+                      className='text-navigation text-xl font-sansreg flex items-center'
+                      onClick={() => setNavbarOpen(!navbarOpen)}
+                    >
                       <GiDonut className='mr-2 text-xl' /> Donuts
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
-                  <Link href='/breads'>
-                    <a className='text-navigation text-xl font-sansreg flex items-center'>
+                  <Link href={'/category' + '/bread'}>
+                    <a
+                      className='text-navigation text-xl font-sansreg flex items-center'
+                      onClick={() => setNavbarOpen(!navbarOpen)}
+                    >
                       <FaBreadSlice className='mr-2 text-xl' /> Bread
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
-                  <Link href='/burger'>
-                    <a className='text-navigation text-xl font-sansreg flex items-center'>
+                  <Link href={'/category' + '/burger'}>
+                    <a
+                      className='text-navigation text-xl font-sansreg flex items-center'
+                      onClick={() => setNavbarOpen(!navbarOpen)}
+                    >
                       <FaHamburger className='mr-2 text-xl' /> Burger
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
-                  <Link href='/biscuits'>
-                    <a className='text-navigation text-xl font-sansreg flex items-center'>
+                  <Link href={'/category' + '/biscuit'}>
+                    <a
+                      className='text-navigation text-xl font-sansreg flex items-center'
+                      onClick={() => setNavbarOpen(!navbarOpen)}
+                    >
                       <FaCookieBite className='mr-2 text-xl' /> Biscuits
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
-                  <Link href='/pie'>
-                    <a className='text-navigation text-xl font-sansreg flex items-center'>
+                  <Link href={'/category' + '/pie'}>
+                    <a
+                      className='text-navigation text-xl font-sansreg flex items-center'
+                      onClick={() => setNavbarOpen(!navbarOpen)}
+                    >
                       <GiPieSlice className='mr-2 text-xl' /> Pie
                     </a>
                   </Link>

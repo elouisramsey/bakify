@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import Navigation from '../../components/Navigation'
+import Navigation from '../../../components/Navigation'
 import Link from 'next/link'
 import { IoIosArrowForward, IoIosAdd, IoIosRemove } from 'react-icons/io'
 import { IoCart } from 'react-icons/io5'
-import CartContext from '../../components/context/context'
-import Footer from '../../components/Footer'
+import CartContext from '../../../components/context/context'
+import Footer from '../../../components/Footer'
 
 const client = require('contentful').createClient({
   space: process.env.NEXT_APP_API_SPACE,
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
   })
   return {
     paths: data.items.map((item) => ({
-      params: { slug: item.fields.slug }
+      params: { type: item.fields.type, slug: item.fields.slug }
     })),
     fallback: true
   }
@@ -39,7 +39,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Pastry({ pastry }) {
-  const { addToCart, increase, reduction } = useContext(CartContext)
+  const { addToCart, increase, reduction, cart } = useContext(CartContext)
   return (
     <>
       <Navigation />
@@ -70,18 +70,18 @@ export default function Pastry({ pastry }) {
                 className='object-cover w-full max-h-full'
               />
             </div>
-            <div className='flex justify-between flex-col px-2'>
+            <div className='flex justify-between flex-col px-2 pt-2'>
               <div className='flex flex-col'>
-                <h1 className='text-navIcon text-2xl capitalize font-sansreg my-1 truncate'>
+                <h1 className='text-navIcon text-lg capitalize font-sansreg truncate'>
                   {pastry.fields.name}
                 </h1>
-                <p className='text-price text-lg font-sansreg'>
+                <p className='text-price text-base font-sansreg'>
                   {'\u20A6'}
                   {pastry.fields.price}
                 </p>
               </div>
               <div className='flex items-center'>
-                <h1 className='text-navIcon text-base capitalize font-sansreg my-2 truncate'>
+                <h1 className='text-navIcon text-base capitalize font-sansreg truncate'>
                   Quantity:
                 </h1>
                 <div className='flex flex-row items-center ml-2'>
@@ -102,10 +102,10 @@ export default function Pastry({ pastry }) {
                   </button>
                 </div>
               </div>
-              <h1 className='text-base text-price font-sansreg capitalize'>
+              <h1 className='text-sm text-price font-sansreg capitalize'>
                 Description
               </h1>
-              <p className='text-lg font-sansreg text-desc'>
+              <p className='text-xs font-sansreg text-desc'>
                 {pastry.fields.description}
               </p>
             </div>
@@ -127,7 +127,7 @@ export default function Pastry({ pastry }) {
           </div>
         </>
       ) : (
-        'loading'
+        <p className='text-base font-sansreg capitalize'>loading</p>
       )}
       <Footer />
     </>

@@ -48,7 +48,7 @@ const Cart = () => {
                 </div>
                 <div className='col-span-2 flex justify-between'>
                   <div className='flex px-4 flex-col'>
-                    <h1 className='font-sansreg text-search text- truncate capitalize'>
+                    <h1 className='font-sansreg text-search text- truncate capitalize text-sm'>
                       {item.name}
                     </h1>
                     <p className='text-price text-xs font-sansreg'>
@@ -56,21 +56,21 @@ const Cart = () => {
                       {(item.price * item.count).toLocaleString()}
                     </p>
                     <div className='flex flex-col'>
-                      <h1 className='text-navIcon text-base capitalize font-sansreg my-1 truncate'>
+                      <h1 className='text-navIcon text-sm capitalize font-sansreg my-1 truncate'>
                         Quantity:
                       </h1>
                       <div className='flex flex-row items-center'>
                         <button
-                          className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-navigation text-xs items-center text-navigation bg-transparent focus:outline-none md:flex font-sansreg'
+                          className='inline-flex justify-center py-0.5  md:py-2 px-2 border border-navigation text-xs items-center text-navigation bg-transparent focus:outline-none md:flex font-sansreg'
                           onClick={() => reduction(item.id)}
                         >
                           <IoIosRemove className='text-xs text-navigation' />
                         </button>
-                        <span className='block-flex justify-center px-4 py-1.5 md:py-2 px-2 border border-navigation text-tiny leading-3  items-center text-navigation bg-transparent focus:outline-none md:flex font-sansreg'>
+                        <span className='block-flex justify-center py-0.5 md:py-2 px-2 border border-navigation text-tiny leading-3  items-center text-navigation bg-transparent focus:outline-none md:flex font-sansreg'>
                           {item.count}
                         </span>
                         <button
-                          className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-navigation text-xs items-center text-navigation bg-transparent focus:outline-none md:flex font-sansreg'
+                          className='inline-flex justify-center py-0.5  md:py-2 px-2 border border-navigation text-xs items-center text-navigation bg-transparent focus:outline-none md:flex font-sansreg'
                           onClick={() => increase(item.id)}
                         >
                           <IoIosAdd className='text-xs text-navigation' />

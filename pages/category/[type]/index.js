@@ -2,9 +2,9 @@ import { useContext } from 'react'
 import Link from 'next/link'
 import { IoIosArrowForward } from 'react-icons/io'
 import { IoCart } from 'react-icons/io5'
-import Navigation from '../../components/Navigation'
-import CartContext from '../../components/context/context'
-import Footer from '../../components/Footer'
+import Navigation from '../../../components/Navigation'
+import CartContext from '../../../components/context/context'
+import Footer from '../../../components/Footer'
 
 const client = require('contentful').createClient({
   space: process.env.NEXT_APP_API_SPACE,
@@ -18,17 +18,18 @@ export async function getStaticPaths() {
   })
   return {
     paths: data.items.map((item) => ({
-      params: { slug: item.fields.type }
+      params: { type: item.fields.type }
     })),
     fallback: true
   }
 }
 
 export async function getStaticProps({ params }) {
+  console.log(params)
   const data = await client.getEntries({
     content_type: 'bakify',
     order: 'sys.createdAt',
-    'fields.type': params.slug
+    'fields.type': params.type
   })
 
   return {
@@ -40,6 +41,7 @@ export async function getStaticProps({ params }) {
 
 export default function Category({ pastry }) {
   const { addToCart } = useContext(CartContext)
+  console.log(pastry.length, pastry[0].fields.type)
   return (
     <>
       <Navigation />
@@ -49,14 +51,13 @@ export default function Category({ pastry }) {
         </Link>
         <IoIosArrowForward className='text-white text-sm ml-1' />
         <IoIosArrowForward className='text-white text-sm' />
-        <Link href='/'>
-          <a className='text-white text-sm capitalize ml-1'></a>
-        </Link>
+        <p className='text-white text-sm capitalize'>{pastry[0].fields.type}</p>
       </div>
       <div className='mb-4 text-center'>
         <h1 className='text-base w-full text-center text-cate capitalize mb-4 font-medium'></h1>
-        <p className='text-sm text-search text-center'>
-          Showing results of 3 - 100
+        <p className='text-sm text-search text-center '>
+          We currently have {pastry.length} types of {pastry[0].fields.type}(s)
+          available
         </p>
       </div>
       <div className='py-4 px-2  mb-4'>
@@ -64,7 +65,7 @@ export default function Category({ pastry }) {
           pastry.map((paste) => (
             <div className='md:grid grid-cols-3 gap-4' key={paste.fields.slug}>
               <div className='mb-4'>
-                <Link href={'pastry/' + paste.fields.slug}>
+                <Link href={paste.fields.type + '/' + paste.fields.slug}>
                   <a>
                     <div className='img-holder'>
                       <img
