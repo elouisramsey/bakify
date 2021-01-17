@@ -56,7 +56,7 @@ export default function Category({ pastry }) {
       <div className='mb-4 text-center'>
         <h1 className='text-base w-full text-center text-cate capitalize mb-4 font-medium'></h1>
         <p className='text-sm text-search text-center '>
-          We currently have {pastry.length} types of{' '}
+          We currently have {pastry ? pastry.length : ''} types of{' '}
           {pastry ? pastry[0].fields.type : ''}(s) available
         </p>
       </div>
