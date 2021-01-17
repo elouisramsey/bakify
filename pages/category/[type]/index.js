@@ -25,7 +25,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(params)
   const data = await client.getEntries({
     content_type: 'bakify',
     order: 'sys.createdAt',
@@ -41,7 +40,6 @@ export async function getStaticProps({ params }) {
 
 export default function Category({ pastry }) {
   const { addToCart } = useContext(CartContext)
-  console.log(pastry.length, pastry[0].fields.type)
   return (
     <>
       <Navigation />
