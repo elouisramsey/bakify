@@ -18,7 +18,7 @@ const Navigation = () => {
   return (
     <header className='w-full bg-nav'>
       <nav role='navigation'>
-        <div className='md:px-0 flex flex-wrap items-center md:flex-no-wrap justify-between bg-white py-2'>
+        <div className='px-4 flex flex-wrap items-center md:flex-no-wrap justify-between bg-white py-2'>
           <div className='md:ml-16  ml-2'>
             <Link href='/'>
               <a>
@@ -61,26 +61,22 @@ const Navigation = () => {
                 <a className='text-2xl relative'>
                   <IoCart />
                   <div className='flex items-center justify-center h-4 absolute w-4 -top-2 left-3 bg-black rounded-full'>
-                    <p className='text-tiny text-white font-sansreg'>
-                      {cart.length}
-                    </p>
+                    <p className='text-tiny text-white '>{cart.length}</p>
                   </div>
                 </a>
               </Link>
             </div>
             <div className='md:flex mr-16 hidden'>
               <Link href='/login'>
-                <a className='inline-flex justify-center py-2 px-4 text-base items-center text-navIcon hover:bg-about focus:outline-none hidden md:flex font-sansreg mr-2'>
+                <a className='inline-flex justify-center py-2 px-4 text-base items-center text-navIcon hover:bg-about focus:outline-none hidden md:flex  mr-2'>
                   <IoPerson className='mr-2 text-navIcon text-base' /> Login
                 </a>
               </Link>
               <Link href='/cart'>
-                <a className='inline-flex justify-center py-2 px-4 border border-navigator text-base items-center rounded-sm text-navIcon bg-link hover:bg-about focus:outline-none hidden md:flex font-sansreg relative'>
+                <a className='inline-flex justify-center py-2 px-4 border border-navigator text-base items-center rounded-sm text-navIcon bg-link hover:bg-about focus:outline-none hidden md:flex  relative'>
                   <IoCart className='mr-2 text-navIcon text-base' /> My Cart
                   <div className='flex items-center justify-center h-4 absolute w-4 -top-0.5 left-24 bg-black rounded-full'>
-                    <p className='text-tiny text-black font-sansreg'>
-                      {cart.length}
-                    </p>
+                    <p className='text-tiny text-black '>0</p>
                   </div>
                 </a>
               </Link>
@@ -91,9 +87,9 @@ const Navigation = () => {
                 type='button'
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
-                <FaTimes className={navbarOpen ? 'block text-xl' : 'hidden'} />
+                <FaTimes className={navbarOpen ? 'block text-sm' : 'hidden'} />
                 <GiHamburgerMenu
-                  className={navbarOpen ? 'hidden' : 'block text-xl'}
+                  className={navbarOpen ? 'hidden' : 'block text-sm'}
                 />
               </button>
             </div>
@@ -107,79 +103,79 @@ const Navigation = () => {
             <div className='holder sm:hidden bg-bg'>
               <div className='py-4 flex justify-between  mx-2'>
                 {/* do the logic for when the person is logged in */}
-                <Link href='/login'>
-                  <a className='inline-flex justify-center py-2 pr-2 border border-login text-sm text-loginText bg-link hover:bg-about focus:outline-none w-1/2 mr-2'>
+                <Link href='/Login'>
+                  <a className='inline-flex justify-center py-2 pr-2 border border-login text-xs text-loginText bg-link hover:bg-about focus:outline-none w-1/2 mr-2'>
                     Login
                   </a>
                 </Link>
-                <Link href='/signup'>
-                  <a className='inline-flex justify-center py-2 px-4 border border-login text-sm text-loginText bg-link hover:bg-about focus:outline-none w-1/2'>
-                    Create an Account
+                <Link href='/Signup'>
+                  <a className='inline-flex justify-center py-2 px-4 border border-login text-xs text-loginText bg-link hover:bg-about focus:outline-none w-1/2'>
+                    Create Account
                   </a>
                 </Link>
               </div>
               <div className='border-b-2 border-white my-4' />
-              <h1 className='text-login text-lg capitalize font-sansreg  ml-2'>
+              <h1 className='text-login text-base capitalize   ml-2'>
                 Categories
               </h1>
               <ul className='flex flex-col md:flex-row md:items-center md:mx-0 md:mt-0 md:pt-0 md:mr-4 md:ml-auto lg:mr-8 justify-between lg:w-2/4 md:w-3/4 w-full h-1/3 md:h-full  ml-2'>
                 <li className='mt-4 md:mt-0 mb-3'>
                   <Link href={'/category' + '/cake'}>
                     <a
-                      className='text-navigation text-xl font-sansreg flex items-center'
+                      className='text-navigation text-sm  flex items-center'
                       onClick={() => setNavbarOpen(!navbarOpen)}
                     >
-                      <FaBirthdayCake className='mr-2 text-xl' /> Cake
+                      <FaBirthdayCake className='mr-2 text-sm' /> Cake
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
                   <Link href={'/category' + '/donut'}>
                     <a
-                      className='text-navigation text-xl font-sansreg flex items-center'
+                      className='text-navigation text-sm  flex items-center'
                       onClick={() => setNavbarOpen(!navbarOpen)}
                     >
-                      <GiDonut className='mr-2 text-xl' /> Donuts
+                      <GiDonut className='mr-2 text-sm' /> Donuts
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
                   <Link href={'/category' + '/bread'}>
                     <a
-                      className='text-navigation text-xl font-sansreg flex items-center'
+                      className='text-navigation text-sm  flex items-center'
                       onClick={() => setNavbarOpen(!navbarOpen)}
                     >
-                      <FaBreadSlice className='mr-2 text-xl' /> Bread
+                      <FaBreadSlice className='mr-2 text-sm' /> Bread
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
                   <Link href={'/category' + '/burger'}>
                     <a
-                      className='text-navigation text-xl font-sansreg flex items-center'
+                      className='text-navigation text-sm  flex items-center'
                       onClick={() => setNavbarOpen(!navbarOpen)}
                     >
-                      <FaHamburger className='mr-2 text-xl' /> Burger
+                      <FaHamburger className='mr-2 text-sm' /> Burger
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
                   <Link href={'/category' + '/biscuit'}>
                     <a
-                      className='text-navigation text-xl font-sansreg flex items-center'
+                      className='text-navigation text-sm  flex items-center'
                       onClick={() => setNavbarOpen(!navbarOpen)}
                     >
-                      <FaCookieBite className='mr-2 text-xl' /> Biscuits
+                      <FaCookieBite className='mr-2 text-sm' /> Biscuits
                     </a>
                   </Link>
                 </li>
                 <li className='mb-3'>
                   <Link href={'/category' + '/pie'}>
                     <a
-                      className='text-navigation text-xl font-sansreg flex items-center'
+                      className='text-navigation text-sm  flex items-center'
                       onClick={() => setNavbarOpen(!navbarOpen)}
                     >
-                      <GiPieSlice className='mr-2 text-xl' /> Pie
+                      <GiPieSlice className='mr-2 text-sm' /> Pie
                     </a>
                   </Link>
                 </li>
@@ -188,8 +184,8 @@ const Navigation = () => {
               <ul className='flex flex-col mt-4 md:flex-row md:items-center md:mx-0 md:mt-0 md:pt-0 md:mr-4 md:ml-auto lg:mr-8 justify-between lg:w-2/4 md:w-3/4 w-full h-1/3 md:h-full  ml-2'>
                 <li className='mt-2 md:mt-0 mb-3'>
                   <Link href='/contact'>
-                    <a className='text-navigation text-xl font-sansreg flex items-center'>
-                      <FaPhoneAlt className='mr-2 text-xl' /> Contact
+                    <a className='text-navigation text-sm  flex items-center'>
+                      <FaPhoneAlt className='mr-2 text-sm' /> Contact
                     </a>
                   </Link>
                 </li>

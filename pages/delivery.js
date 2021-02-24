@@ -37,13 +37,13 @@ const Delivery = () => {
   return (
     <>
       <Navigation />
-      <section className='py-4 px-4 md:py-18 md:px-16'>
-        <h1 className='search text-base text-navigation font-sansreg capitalize mb-2'>
+      <section className='py-4 px-8 md:py-18 md:px-16'>
+        <h1 className='search text-base text-navigation  capitalize mb-2'>
           Checkout
         </h1>
         <section className='border border-total'>
           <div className='bg-white p-2'>
-            <h1 className='search text-base bg-white font-sansreg capitalize text-navigation'>
+            <h1 className='search text-base bg-white  capitalize text-navigation'>
               Delivery Details
             </h1>
           </div>
@@ -73,7 +73,7 @@ const Delivery = () => {
                 value={name}
                 required
                 onChange={(e) => setName(e.target.value)}
-                className=' border border-total text-xs rounded-sm md:flex font-sansreg md:w-1/2 my-2 w-full py-2 px-2'
+                className=' border border-total text-xs rounded-sm md:flex  md:w-1/2 my-2 w-full py-2 px-2'
               />
             </div>
 
@@ -87,7 +87,7 @@ const Delivery = () => {
                 value={address}
                 required
                 onChange={(e) => setAddress(e.target.value)}
-                className=' border border-total text-xs rounded-sm md:flex font-sansreg md:w-1/2 my-2 w-full py-2 px-2'
+                className=' border border-total text-xs rounded-sm md:flex  md:w-1/2 my-2 w-full py-2 px-2'
               />
             </div>
 
@@ -101,7 +101,7 @@ const Delivery = () => {
                 value={email}
                 required
                 onChange={(e) => setEmail(e.target.value)}
-                className=' border border-total text-xs rounded-sm md:flex font-sansreg md:w-1/2 my-2 w-full py-2 px-2'
+                className=' border border-total text-xs rounded-sm md:flex  md:w-1/2 my-2 w-full py-2 px-2'
               />
             </div>
 
@@ -115,7 +115,7 @@ const Delivery = () => {
                 value={phone}
                 required
                 onChange={(e) => setPhone(e.target.value)}
-                className=' border border-total text-xs rounded-sm md:flex font-sansreg md:w-1/2 my-2 w-full py-2 px-2'
+                className=' border border-total text-xs rounded-sm md:flex  md:w-1/2 my-2 w-full py-2 px-2'
               />
             </div>
           </form>
@@ -123,7 +123,7 @@ const Delivery = () => {
             <PaystackButton
               className='paystack-button inline-flex justify-center p-1.5 md:py-2 border border-login
         text-xs items-center rounded-sm text-white bg-login hover:bg-about
-        focus:outline-none md:flex font-sansreg md:w-1/2 my-2 w-full'
+        focus:outline-none md:flex  md:w-1/2 my-2 w-full'
               {...componentProps}
             />
           </div>

@@ -43,7 +43,7 @@ export default function Category({ pastry }) {
   return (
     <>
       <Navigation />
-      <div className='py-4 bg-navigator px-2 w-full flex items-center mb-4'>
+      <div className='py-4 bg-navigator px-8 w-full flex items-center mb-4'>
         <Link href='/'>
           <a className='text-white text-sm'>Home</a>
         </Link>
@@ -78,7 +78,7 @@ export default function Category({ pastry }) {
                 </Link>
                 <div className='flex justify-between flex-row items-center py-4'>
                   <div className='flex flex-col'>
-                    <h1 className='text-navIcon text-base capitalize font-sansreg mt-2 truncate'>
+                    <h1 className='text-navIcon text-base capitalize  mt-2 truncate'>
                       {paste.fields.name}
                     </h1>
                     <p className='text-price text-xs'>
@@ -87,15 +87,9 @@ export default function Category({ pastry }) {
                     </p>
                   </div>
                   <button
-                    className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-login text-base items-center rounded-sm text-navIcon bg-link hover:bg-about focus:outline-none md:flex font-sansreg'
+                    className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-login text-base items-center rounded-sm text-navIcon bg-link hover:bg-about focus:outline-none md:flex '
                     onClick={() => {
-                      addToCart(
-                        paste.fields.slug,
-                        paste.fields.name,
-                        paste.fields.price,
-                        paste.fields.images.fields.file.url,
-                        paste.fields.count
-                      )
+                      addToCart(paste.sys.id)
                     }}
                   >
                     <IoCart className='mr-2 text-loginText text-sm md:text-base' />

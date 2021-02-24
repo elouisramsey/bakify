@@ -6,10 +6,8 @@ import CartContext from './context/context'
 const Bestsellers = ({ bestseller }) => {
   const { addToCart } = useContext(CartContext)
   return (
-    <section className='py-4 px-4 md:py-18 md:px-16'>
-      <h1 className='text-login text-xl capitalize font-sansreg mb-2'>
-        our bestsellers
-      </h1>
+    <section className='py-4 px-8 md:py-18 md:px-16'>
+      <h1 className='text-login text-sm capitalize  mb-4'>our bestsellers</h1>
       <div className='md:grid grid-cols-3 gap-4'>
         {bestseller.map((bestseller) => (
           <div className='mb-4' key={bestseller.fields.slug}>
@@ -33,7 +31,7 @@ const Bestsellers = ({ bestseller }) => {
             </Link>
             <div className='flex justify-between flex-row items-center py-4'>
               <div className='flex flex-col'>
-                <h1 className='text-navIcon text-base capitalize font-sansreg mt-2 truncate'>
+                <h1 className='text-navIcon text-sm capitalize  mt-2 truncate'>
                   {bestseller.fields.name}
                 </h1>
                 <p className='text-price text-xs'>
@@ -42,18 +40,12 @@ const Bestsellers = ({ bestseller }) => {
                 </p>
               </div>
               <button
-                className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-login text-base items-center rounded-sm text-navIcon bg-link hover:bg-about focus:outline-none md:flex font-sansreg'
+                className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-login text-xs items-center rounded-sm text-navIcon bg-link hover:bg-about focus:outline-none md:flex '
                 onClick={() => {
-                  addToCart(
-                    bestseller.fields.slug,
-                    bestseller.fields.name,
-                    bestseller.fields.price,
-                    bestseller.fields.images.fields.file.url,
-                    bestseller.fields.count
-                  )
+                  addToCart(bestseller.sys.id)
                 }}
               >
-                <IoCart className='mr-2 text-loginText text-sm md:text-base' />
+                <IoCart className='mr-2 text-loginText text-xs md:text-base' />
                 Add to Cart
               </button>
             </div>

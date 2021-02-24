@@ -43,21 +43,21 @@ const Footer = () => {
           <ul className='flex flex-col md:flex-row md:items-center md:mx-0 md:mt-0 md:pt-0 md:mr-4 md:ml-auto lg:mr-8 justify-between lg:w-2/4 md:w-3/4 w-full h-1/3 md:h-full  ml-2'>
             <li className='md:mt-0 mb-3'>
               <Link href='/'>
-                <a className='text-white text-xs font-sansreg flex items-center capitalize'>
+                <a className='text-white text-xs  flex items-center capitalize'>
                   Home
                 </a>
               </Link>
             </li>
             <li className='mb-3'>
               <Link href='/cart'>
-                <a className='text-white text-xs font-sansreg flex items-center capitalize'>
+                <a className='text-white text-xs  flex items-center capitalize'>
                   My cart
                 </a>
               </Link>
             </li>
             <li className='mb-3'>
               <Link href='/contact'>
-                <a className='text-white text-xs font-sansreg flex items-center capitalize'>
+                <a className='text-white text-xs  flex items-center capitalize'>
                   contact us
                 </a>
               </Link>
@@ -71,44 +71,34 @@ const Footer = () => {
           <ul className='flex flex-col md:flex-row md:items-center md:mx-0 md:mt-0 md:pt-0 md:mr-4 md:ml-auto lg:mr-8 justify-between lg:w-2/4 md:w-3/4 w-full h-1/3 md:h-full  ml-2'>
             <li className='mt-4 md:mt-0 mb-3'>
               <Link href='/'>
-                <a className='text-white text-xl font-sansreg flex items-center'>
-                  Cake
-                </a>
+                <a className='text-white text-xl  flex items-center'>Cake</a>
               </Link>
             </li>
             <li className='mb-3'>
               <Link href='/donuts'>
-                <a className='text-white text-xl font-sansreg flex items-center'>
-                  Donuts
-                </a>
+                <a className='text-white text-xl  flex items-center'>Donuts</a>
               </Link>
             </li>
             <li className='mb-3'>
               <Link href='/breads'>
-                <a className='text-white text-xl font-sansreg flex items-center'>
-                  Bread
-                </a>
+                <a className='text-white text-xl  flex items-center'>Bread</a>
               </Link>
             </li>
             <li className='mb-3'>
               <Link href='/burger'>
-                <a className='text-white text-xl font-sansreg flex items-center'>
-                  Burger
-                </a>
+                <a className='text-white text-xl  flex items-center'>Burger</a>
               </Link>
             </li>
             <li className='mb-3'>
               <Link href='/biscuits'>
-                <a className='text-navigation text-xl font-sansreg flex items-center'>
+                <a className='text-navigation text-xl  flex items-center'>
                   Biscuits
                 </a>
               </Link>
             </li>
             <li className='mb-3'>
               <Link href='/'>
-                <a className='text-white text-xl font-sansreg flex items-center'>
-                  Pie
-                </a>
+                <a className='text-white text-xl  flex items-center'>Pie</a>
               </Link>
             </li>
           </ul>

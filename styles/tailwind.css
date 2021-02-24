@@ -6,10 +6,28 @@ body {
     background-color: #F2F2F2;
     height: 100vh;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+p,
+a,
+li,
+label,
+h2,
+div {
+    font-family: 'Poppins', sans-serif;
 }
 
 .hero {
     /* background-image: url('/images/hero background.svg'); */
     background-color: rgb(219, 218, 218);
     background-blend-mode: multiply;
+}
+
+.input:-internal-autofill-selected {
+    background-color: transparent !important;
 }

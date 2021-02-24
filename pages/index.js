@@ -33,11 +33,16 @@ export default function Home({ pastries }) {
     (o) => !uniqIds[o.fields.type] && (uniqIds[o.fields.type] = true)
   )
   return (
-    <Layout>
-      <Hero />
-      <How />
-      <Bestsellers bestseller={bestseller} />
-      <Category categories={categories} />
-    </Layout>
+    <>
+      <p className='text-sm text-search text-center w-full h-screen md:flex justify-center items-center hidden'>
+        Please switch to mobile
+      </p>
+      <Layout className='md:hidden'>
+        <Hero />
+        <How />
+        <Bestsellers bestseller={bestseller} />
+        <Category categories={categories} />
+      </Layout>
+    </>
   )
 }

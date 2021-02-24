@@ -39,26 +39,26 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Pastry({ pastry }) {
-  const { addToCart, increase, reduction, cart } = useContext(CartContext)
+  const { addToCart, increase, reduction } = useContext(CartContext)
   return (
     <>
       <Navigation />
       {pastry ? (
         <>
-          <div className='py-4 bg-navigator px-2 w-full flex items-center mb-4'>
+          <div className='py-4 bg-navigator px-8 w-full flex items-center mb-4'>
             <Link href='/'>
-              <a className='text-white text-sm'>Home</a>
+              <a className='text-white text-xs'>Home</a>
             </Link>
-            <IoIosArrowForward className='text-white text-sm ml-1' />
-            <IoIosArrowForward className='text-white text-sm' />
+            <IoIosArrowForward className='text-white text-xs ml-1' />
+            <IoIosArrowForward className='text-white text-xs' />
             <Link href={pastry.fields.type}>
-              <a className='text-white text-sm capitalize ml-1'>
+              <a className='text-white text-xs capitalize ml-1'>
                 {pastry.fields.type}
               </a>
             </Link>
-            <IoIosArrowForward className='text-white text-sm' />
-            <IoIosArrowForward className='text-white text-sm' />
-            <h1 className='text-white text-sm capitalize ml-1'>
+            <IoIosArrowForward className='text-white text-xa' />
+            <IoIosArrowForward className='text-white text-xs' />
+            <h1 className='text-white text-xs capitalize ml-1'>
               {pastry.fields.name}
             </h1>
           </div>
@@ -70,55 +70,49 @@ export default function Pastry({ pastry }) {
                 className='object-cover w-full max-h-full'
               />
             </div>
-            <div className='flex justify-between flex-col px-2 pt-2'>
+            <div className='flex justify-between flex-col px-8 pt-6'>
               <div className='flex flex-col'>
-                <h1 className='text-navIcon text-lg capitalize font-sansreg truncate'>
+                <h1 className='text-navIcon text-base capitalize  truncate'>
                   {pastry.fields.name}
                 </h1>
-                <p className='text-price text-base font-sansreg'>
+                <p className='text-price text-sm '>
                   {'\u20A6'}
                   {pastry.fields.price}
                 </p>
               </div>
               <div className='flex items-center'>
-                <h1 className='text-navIcon text-base capitalize font-sansreg truncate'>
+                <h1 className='text-navIcon text-sm capitalize  truncate'>
                   Quantity:
                 </h1>
                 <div className='flex flex-row items-center ml-2'>
                   <button
-                    className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-navigation text-xs items-center text-navigation bg-transparent focus:outline-none md:flex font-sansreg'
-                    onClick={() => reduction(pastry.fields.slug)}
+                    className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-navigation text-xs items-center text-navigation bg-transparent focus:outline-none md:flex '
+                    onClick={() => reduction(pastry.sys.id)}
                   >
                     <IoIosRemove className='text-xs text-navigation' />
                   </button>
-                  <span className='block-flex justify-center px-4 py-1.5 md:py-2 px-2 border border-navigation text-tiny leading-3  items-center text-navigation bg-transparent focus:outline-none md:flex font-sansreg'>
+                  <span className='block-flex justify-center px-4 py-1.5 md:py-2 px-2 border border-navigation text-tiny leading-3  items-center text-navigation bg-transparent focus:outline-none md:flex '>
                     {pastry.fields.count}
                   </span>
                   <button
-                    className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-navigation text-xs items-center text-navigation bg-transparent focus:outline-none md:flex font-sansreg'
-                    onClick={() => increase(pastry.fields.slug)}
+                    className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-navigation text-xs items-center text-navigation bg-transparent focus:outline-none md:flex '
+                    onClick={() => increase(pastry.sys.id)}
                   >
                     <IoIosAdd className='text-xs text-navigation' />
                   </button>
                 </div>
               </div>
-              <h1 className='text-sm text-price font-sansreg capitalize'>
+              <h1 className='text-sm text-price  capitalize mt-2'>
                 Description
               </h1>
-              <p className='text-xs font-sansreg text-desc'>
+              <p className='text-xs text-desc my-2'>
                 {pastry.fields.description}
               </p>
             </div>
             <button
-              className='inline-flex justify-center p-1.5 md:py-2 px-2 border border-login text-xs items-center rounded-sm text-white bg-login hover:bg-about focus:outline-none md:flex font-sansreg w-1/2 m-2'
+              className='inline-flex justify-center p-1.5 md:py-2 mx-8 px-2 border border-login text-xs items-center rounded-sm text-white bg-login hover:bg-about focus:outline-none md:flex  w-1/2 m-2'
               onClick={() => {
-                addToCart(
-                  pastry.fields.slug,
-                  pastry.fields.name,
-                  pastry.fields.price,
-                  pastry.fields.images.fields.file.url,
-                  pastry.fields.count
-                )
+                addToCart(pastry.sys.id)
               }}
             >
               <IoCart className='mr-2 text-white text-xs md:text-base' />
@@ -127,7 +121,7 @@ export default function Pastry({ pastry }) {
           </div>
         </>
       ) : (
-        <p className='text-base font-sansreg capitalize'>loading</p>
+        <p className='text-base  capitalize'>loading</p>
       )}
       <Footer />
     </>

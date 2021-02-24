@@ -1,11 +1,6 @@
 module.exports = {
   purge: ['./components/**/*.js', './pages/**/*.js'],
   theme: {
-    fontFamily: {
-      fairbold: 'PlayfairDisplay-Bold, Arial, sans-serif',
-      sansreg: 'OpenSans-Regular, Georgia, serif',
-      sansbold: 'OpenSans-SemiBold, Georgia, serif'
-    },
     extend: {
       colors: {
         bg: '#F2F2F2',
